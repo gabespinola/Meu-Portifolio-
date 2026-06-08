@@ -24,22 +24,21 @@ h2.titulo{
     color: black;
     font-size: 28px;
     text-align: center;
-
 }
 
 h2.titulo span{
     color: rgb(45, 79, 190);
 }
 
-/*ESTILO DO CABEÇALHO*/
+/* ESTILO DO CABEÇALHO */
 header{
-    padding: 40px 4% ;
+    padding: 40px 4%;
 }
 
-header >.interface{
+header > .interface{
     display: flex;
     align-items: center;
-    justify-content:space-between ;
+    justify-content: space-between;
     transition: .5s;
 }
 
@@ -50,7 +49,7 @@ header a{
 }
 
 header a:hover{
-    color:black ;
+    color: black;
     transform: scale(1.06);
 }
 
@@ -64,13 +63,19 @@ header nav ul li{
 }
 
 .btn-contato button{
-    padding: 10px 30px ;
-    font-size:  10px;
+    padding: 10px 30px;
+    font-size: 10px;
     font-weight: 600;
     background-color: rgb(45, 79, 190);
     border: 0;
     border-radius: 30px;
     color: #fff;
+    transition: .3s;
+}
+
+.btn-contato button:hover{
+    box-shadow: 0px 0px 8px rgb(71, 179, 241);
+    transform: scale(1.1);
 }
 
 .logo img{
@@ -78,42 +83,18 @@ header nav ul li{
     height: auto;
 }
 
-.btn-contato button:hover{
-    box-shadow: 0px 0px 8px rgb(71, 179, 241);
-    transform: scale(1.2);
-}
-
 /* ESTILO DO TOPO DO SITE */
-section.topo-do-site {
+section.topo-do-site{
     padding: 40px 10%;
 }
 
-.txt-topo-site {
+.txt-topo-site{
     flex: 1;
-}
-
-.img-topo-site {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 80px; /* 👈 espaçamento entre texto e imagem */
-}
-
-.img-topo-site img {
-    width: 210px;
-    height: 320px;
-    object-fit: cover;
-}
-
-.flex {
-    display: flex;
-    align-items: center;
 }
 
 .txt-topo-site h1{
     font-size: 38px;
-    line: height 40px; ;
+    line-height: 40px;
 }
 
 .txt-topo-site span{
@@ -125,30 +106,77 @@ section.topo-do-site {
     margin: 40px 0;
 }
 
+.img-topo-site{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80px;
+}
+
 .img-topo-site img{
+    width: 210px;
+    height: 320px;
+    object-fit: cover;
     position: relative;
     animation: flutuar 2s ease-in-out infinite alternate;
+}
 
-
+.flex{
+    display: flex;
+    align-items: center;
 }
 
 @keyframes flutuar{
     0%{
         top: 0;
     }
+
     100%{
-        top:  30px;
+        top: 30px;
     }
 }
 
-.especialidades{
+/* ESPECIALIDADES */
+section.especialidades{
     padding: 40px 4%;
 }
 
-.especialidades.especialidades-box{
-    color: black;
-    padding: 40px;
-
+section.especialidades .flex{
+    gap: 60px;
 }
 
-.especialidades.especialidades-box
+.especialidades .especialidades-box{
+    color: black;
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.especialidades .especialidades-box:hover{
+    transform: scale(1.05);
+    box-shadow:
+        0 0 5px rgb(45, 79, 190),
+        0 0 15px rgb(45, 79, 190),
+        0 0 25px rgba(45, 79, 190, 0.5);
+}
+
+.especialidades .especialidades-box i{
+    font-size: 50px;
+    color: rgb(45, 79, 190);
+    display: block;
+    margin-bottom: 15px;
+    transition: .2s;
+}
+
+.especialidades .especialidades-box h3{
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+.especialidades .especialidades-box p{
+    line-height: 1.8;
+}
