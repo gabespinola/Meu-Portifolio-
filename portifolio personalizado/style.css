@@ -260,7 +260,7 @@ section.portifolio{
 }
 
 section.portifolio .flex{
-    gap: 80px;
+    justify-content: space-around;
 
 }
 
@@ -269,4 +269,13 @@ section.portifolio .flex{
     height: 460px;
     background-color:rgb(45, 79, 190) ;
 
+}
+
+.img-port{
+    width: 360px;
+    height: 460px;
+    background-color: rgb(45, 79, 190);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
 }
