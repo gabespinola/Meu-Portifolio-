@@ -446,3 +446,17 @@ footer{
     align-items: center;
     justify-content: center;
 }
+
+
+@media screen and (max-width:1240px){
+    /* CLASSES GERAIS */
+    .flex{
+        flex-direction:column ;
+    }
+    
+    /* CABEÇALHO */
+    .menu-desktop, .btn-contato{
+        display: none;
+    }
+
+}
