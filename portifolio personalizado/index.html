@@ -30,10 +30,10 @@
 
         <nav class="menu-desktop">
             <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Especialidades</a></li>
-                <li><a href="">Sobre</a></li>
-                <li><a href="">Projetos</a></li>
+                <li><a href="inicio">Inicio</a></li>
+                <li><a href="especialiadades">Especialidades</a></li>
+                <li><a href="sobre">Sobre</a></li>
+                <li><a href="projetos">Projetos</a></li>
             </ul>
         </nav>
 
@@ -56,10 +56,10 @@
 
             <nav>
                 <ul>
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="">Especialidades</a></li>
-                    <li><a href="">Sobre</a></li>
-                    <li><a href="">Projetos</a></li>
+                    <li><a href="inicio">Inicio</a></li>
+                    <li><a href="especialidades">Especialidades</a></li>
+                    <li><a href="sobre">Sobre</a></li>
+                    <li><a href="projetos">Projetos</a></li>
                     <li><a href="">Contato</a></li>
                 </ul>
             </nav>
@@ -190,32 +190,5 @@
     </div>
 </footer>
 
-<script>
-    const btnAbrir   = document.querySelector('.btn-abrir-menu');
-    const btnFechar  = document.querySelector('.btn-fechar');
-    const menuMobile = document.querySelector('.menu-mobile');
-    const overlay    = document.querySelector('.menu-overlay');
-
-    function abrirMenu() {
-        menuMobile.classList.add('open');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function fecharMenu() {
-        menuMobile.classList.remove('open');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    btnAbrir.addEventListener('click', abrirMenu);
-    btnFechar.addEventListener('click', fecharMenu);
-    overlay.addEventListener('click', fecharMenu);
-
-    document.querySelectorAll('.menu-mobile nav a').forEach(link => {
-        link.addEventListener('click', fecharMenu);
-    });
-</script>
-
-</body>
+<script src="script.js" defer></script>
 </html>
