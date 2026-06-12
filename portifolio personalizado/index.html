@@ -43,11 +43,31 @@
             </a>
         </div>
 
+        <!-- BOTÃO HAMBURGUER -->
+        <div class="btn-abrir-menu">
+            <i class="bi bi-list"></i>
+        </div>
+
+        <!-- MENU MOBILE -->
         <div class="menu-mobile">
             <div class="btn-fechar">
-                
+                <i class="bi bi-x-lg"></i>
             </div>
+
+            <nav>
+                <ul>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="">Especialidades</a></li>
+                    <li><a href="">Sobre</a></li>
+                    <li><a href="">Projetos</a></li>
+                    <li><a href="">Contato</a></li>
+                </ul>
+            </nav>
         </div>
+
+        <!-- OVERLAY -->
+        <div class="menu-overlay"></div>
+
     </div>
 </header>
 
@@ -56,16 +76,13 @@
     <section class="topo-do-site">
         <div class="interface">
             <div class="flex">
-
                 <div class="txt-topo-site">
                     <h1>Lorem ipsum dolor <span>.</span></h1>
-
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Totam natus magni dolores. Quibusdam ipsam, itaque iusto
                         dignissimos tenetur, libero animi molestias culpa.
                     </p>
-
                     <div class="btn-contato">
                         <a href="#">
                             <button>Entre em Contato</button>
@@ -76,76 +93,51 @@
                 <div class="img-topo-site">
                     <img src="imagens/pexels-kampus-7893828.jpg" alt="">
                 </div>
-
             </div>
         </div>
     </section>
 
     <section class="especialidades">
         <div class="interface">
-
             <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
-
             <div class="flex">
-
                 <div class="especialidades-box">
                     <i class="bi bi-file-code"></i>
                     <h3>Website</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Totam natus magni dolores.
-                    </p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam natus magni dolores.</p>
                 </div>
-
                 <div class="especialidades-box">
                     <i class="bi bi-hdd-rack"></i>
                     <h3>Backend</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Totam natus magni dolores.
-                    </p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam natus magni dolores.</p>
                 </div>
-
                 <div class="especialidades-box">
                     <i class="bi bi-wordpress"></i>
                     <h3>Blog</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Totam natus magni dolores.
-                    </p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam natus magni dolores.</p>
                 </div>
-
             </div>
-
         </div>
     </section>
 
     <section class="sobre">
         <div class="interface">
             <div class="flex">
-                 <div class="img-sobre">
+                <div class="img-sobre">
                     <img src="imagens/pexels-kampus-7893828.jpg" alt="">
-                    
                 </div>
-                
-                
                 <div class="txt-sobre">
                     <h2>MUITO PRAZER,<span>SOU GABRIEL ESPÍNOLA</span></h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis tempore, iusto fugit consectetur, ratione maxime architecto nam blanditiis molestiae, !</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolore soluta itaque officiis distinctio qui rerum deleniti quia optio fuga, cupiditate eius ea quisquam recusandae pariatur ex quam voluptatum beatae.</p>
-
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis tempore, iusto fugit consectetur, ratione maxime architecto nam blanditiis molestiae!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolore soluta itaque officiis distinctio qui rerum deleniti quia optio fuga.</p>
                     <div class="btn-social">
                         <a href=""><button><i class="bi bi-linkedin"></i></button></a>
                         <a href=""><button><i class="bi bi-github"></i></button></a>
                         <a href=""><button><i class="bi bi-instagram"></i></button></a>
                     </div>
-
                 </div>
-
-               
             </div>
         </div>
-
     </section>
 
     <section class="portifolio">
@@ -159,29 +151,25 @@
                     <div class="overlay">To do list</div>
                 </div>
                 <div class="img-port" style="background-image: url(imagens/financeiro-port.png);">
-                    <div class="overlay">Sistema Finaceiro</div>
+                    <div class="overlay">Sistema Financeiro</div>
                 </div>
             </div>
-
         </div>
-
     </section>
 
     <section class="formulario">
         <div class="interface">
-             <h2 class="titulo">FALE <span>COMIGO.</span></h2>
-
-             <form action="">
-                <input type="text" name="" id="" placeholder="Seu nome" required>
-                <input type="text" name="" id="" placeholder="Seu e-mail"required>
-                <input type="text" name="" id="" placeholder="Seu celular"required>
-                <textarea name="" id="" placeholder="Sua mensagem" required></textarea>
+            <h2 class="titulo">FALE <span>COMIGO.</span></h2>
+            <form action="">
+                <input type="text" placeholder="Seu nome" required>
+                <input type="email" placeholder="Seu e-mail" required>
+                <input type="tel" placeholder="Seu celular" required>
+                <textarea placeholder="Sua mensagem" required></textarea>
                 <div class="btn-enviar"><input type="submit" value="Enviar"></div>
-                
-
-             </form>
+            </form>
         </div>
     </section>
+
 </main>
 
 <footer>
@@ -201,6 +189,33 @@
         </div>
     </div>
 </footer>
+
+<script>
+    const btnAbrir   = document.querySelector('.btn-abrir-menu');
+    const btnFechar  = document.querySelector('.btn-fechar');
+    const menuMobile = document.querySelector('.menu-mobile');
+    const overlay    = document.querySelector('.menu-overlay');
+
+    function abrirMenu() {
+        menuMobile.classList.add('open');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function fecharMenu() {
+        menuMobile.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    btnAbrir.addEventListener('click', abrirMenu);
+    btnFechar.addEventListener('click', fecharMenu);
+    overlay.addEventListener('click', fecharMenu);
+
+    document.querySelectorAll('.menu-mobile nav a').forEach(link => {
+        link.addEventListener('click', fecharMenu);
+    });
+</script>
 
 </body>
 </html>

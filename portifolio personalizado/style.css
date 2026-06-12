@@ -57,7 +57,7 @@ header nav ul{
     list-style-type: none;
 }
 
-header nav ul li{
+header nav.menu-desktop ul li{
     display: inline-block;
     padding: 0 40px;
 }
@@ -81,6 +81,105 @@ header nav ul li{
 .logo img{
     width: 150px;
     height: auto;
+}
+
+/* BOTÃO HAMBURGUER */
+.btn-abrir-menu {
+    display: none; /* escondido no desktop */
+    font-size: 28px;
+    color: rgb(45, 79, 190);
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.btn-abrir-menu:hover {
+    transform: scale(1.1);
+}
+
+/* OVERLAY (fundo escurecido) */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 99998;
+    opacity: 0;
+    transition: opacity 0.35s;
+}
+
+.menu-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* MENU MOBILE */
+.menu-mobile {
+    background-color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 70%;
+    box-shadow: -6px 0 24px rgba(45, 79, 190, 0.12);
+
+    /* Começa fora da tela, entra com animação */
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Linha azul decorativa no topo */
+.menu-mobile::before {
+    content: "";
+    display: block;
+    height: 4px;
+    background: rgb(45, 79, 190);
+}
+
+.menu-mobile.open {
+    transform: translateX(0);
+}
+
+/* Botão fechar */
+.menu-mobile .btn-fechar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 4%;
+    font-size: 22px;
+    color: rgb(45, 79, 190);
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.menu-mobile .btn-fechar:hover {
+    transform: scale(1.15);
+}
+
+.menu-mobile nav ul {
+    list-style: none;
+    text-align: right;
+}
+
+/* CORREÇÃO: era #fff sobre fundo branco = invisível */
+.menu-mobile nav ul li a {
+    color: #000;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 18px 4%;
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(45, 79, 190, 0.08);
+    transition: color 0.2s, background-color 0.2s, padding-right 0.2s;
+}
+
+.menu-mobile nav ul li:last-child a {
+    border-bottom: none;
+}
+
+.menu-mobile nav ul li a:hover {
+    background-color: rgb(45, 79, 190);
+    color: #fff;
+    padding-right: 8%;
 }
 
 /* ESTILO DO TOPO DO SITE */
@@ -128,13 +227,8 @@ section.topo-do-site{
 }
 
 @keyframes flutuar{
-    0%{
-        top: 0;
-    }
-
-    100%{
-        top: 30px;
-    }
+    0%{ top: 0; }
+    100%{ top: 30px; }
 }
 
 /* ESPECIALIDADES */
@@ -181,9 +275,7 @@ section.especialidades .flex{
     line-height: 1.8;
 }
 
-
 /* ESTILO DO SOBRE */
-
 section.sobre{
     padding: 40px 4%;
 }
@@ -212,9 +304,8 @@ section.sobre .flex{
 }
 
 .sobre .txt-sobre h2 span{
-    color:rgb(45, 79, 190) ;
+    color: rgb(45, 79, 190);
     display: block;
-
 }
 
 .sobre .txt-sobre p{
@@ -252,11 +343,9 @@ section.sobre .flex{
     transform: scale(1.1);
 }
 
-/* ESTILO DO POTIFOLIO */
-
+/* ESTILO DO PORTIFÓLIO */
 section.portifolio{
     padding: 80px 4%;
-    
 }
 
 section.portifolio .flex{
@@ -265,27 +354,19 @@ section.portifolio .flex{
 }
 
 .img-port{
-    width:360px ;
-    height: 460px;
-    background-color:rgb(45, 79, 190) ;
-
-}
-
-.img-port{
     width: 360px;
     height: 460px;
     background-color: rgb(45, 79, 190);
     background-size: cover;
-    background-position:100% 0% ;
-    border-radius: 10px;
+    background-position: 100% 0%;
+    border-radius: 40px;
     transition: 5s;
     cursor: pointer;
-    border-radius: 40px;
     position: relative;
 }
 
 .img-port:hover{
-    background-position:100% 100% ;
+    background-position: 100% 100%;
 }
 
 .overlay{
@@ -293,7 +374,7 @@ section.portifolio .flex{
     top: 0;
     left: 0;
     width: 100%;
-    height:100% ;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.74);
     border-radius: 40px;
     display: flex;
@@ -303,27 +384,21 @@ section.portifolio .flex{
     font-weight: 450;
     color: #fff;
     opacity: 0;
-    transition: 0.5s; ;
-
-
+    transition: 0.5s;
 }
 
 .overlay:hover{
     opacity: 1;
-
 }
 
-/*ESTILO DO FORMULARIO*/
-
+/* ESTILO DO FORMULÁRIO */
 section.formulario{
     padding: 80px 4%;
-
 }
 
 section.formulario form{
     max-width: 550px;
     margin: 40px auto 0;
-
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -334,7 +409,7 @@ form textarea{
     width: 100%;
     background-color: rgba(180, 167, 167, 0.171);
     outline: 0;
-    border: none; /* remove a borda preta */
+    border: none;
     padding: 15px;
     border-radius: 20px;
     color: #000;
@@ -351,10 +426,9 @@ form .btn-enviar{
     text-align: center;
 }
 
-
 form .btn-enviar input[type=submit]{
-    width:120px ;
-    background-color:rgb(45, 79, 190) ;
+    width: 120px;
+    background-color: rgb(45, 79, 190);
     color: #fff;
     font-weight: 700;
     cursor: pointer;
@@ -367,8 +441,7 @@ form .btn-enviar input[type=submit]{
         0 0 16px rgb(71, 179, 241);
 }
 
-
-/* footer */
+/* FOOTER */
 footer{
     padding: 40px 4%;
     background-color: #fff;
@@ -416,17 +489,6 @@ footer{
     transform: scale(1.1);
 }
 
-
-.line-footer p{
-    font-size: 14px;
-    color: #000;
-}
-
-.line-footer a{
-    color: rgb(45, 79, 190);
-    text-decoration: none;
-}
-
 .line-footer p{
     display: flex;
     align-items: center;
@@ -447,18 +509,28 @@ footer{
     justify-content: center;
 }
 
+.line-footer a{
+    color: rgb(45, 79, 190);
+    text-decoration: none;
+}
 
-@media screen and (max-width:1240px){
-    /* CLASSES GERAIS */
+/* ================================
+   RESPONSIVO — MOBILE
+   ================================ */
+@media screen and (max-width: 1240px) {
+
     .flex{
-        flex-direction:column ;
+        flex-direction: column;
     }
-    
-    /* CABEÇALHO */
-    .menu-desktop, .btn-contato{
+
+    /* Esconde menu desktop e botão de contato */
+    .menu-desktop,
+    header > .interface > .btn-contato {
         display: none;
     }
 
-    /* TOPO DO SITE */
-
+    /* Mostra o botão hamburguer */
+    .btn-abrir-menu {
+        display: block;
+    }
 }
